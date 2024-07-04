@@ -3,11 +3,13 @@ package db
 import (
 	"database/sql"
 	"log"
+	"os"
 	"time"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 
+	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 
@@ -23,10 +25,19 @@ type Realtys struct {
 	UpdateDate   time.Time
 }
 
-var connStr = "postgres://postgres:admin@localhost:5432/vn?sslmode=disable"
+func getConnectionString() string {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatalf("Error %v", err)
+	}
+
+	apiKey := os.Getenv("API_KEY")
+
+	return apiKey
+}
 
 func connect() *gorm.DB {
-	db, err := sql.Open("postgres", connStr)
+	db, err := sql.Open("postgres", getConnectionString())
 	if err != nil {
 		log.Fatal(err)
 	}
