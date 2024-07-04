@@ -31,9 +31,9 @@ func getConnectionString() string {
 		log.Fatalf("Error %v", err)
 	}
 
-	apiKey := os.Getenv("API_KEY")
+	connStr := os.Getenv("connectionString")
 
-	return apiKey
+	return connStr
 }
 
 func connect() *gorm.DB {
