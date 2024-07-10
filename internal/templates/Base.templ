@@ -1,0 +1,44 @@
+package templates
+
+templ Base() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>VN Assessoria</title>
+			// <link rel="icon" type="image/x-icon" href="/public/favicon.ico"/>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<link rel="stylesheet" href="/static/css/style.css"/>
+			<link rel="stylesheet" href="/static/css/input.css"/>
+		</head>
+		<body class="antialiased flex">
+			@Header()
+			<div class="">
+				<div class="bg-white">
+					{ children... }
+				</div>
+			</div>
+			@Footer()
+		</body>
+	</html>
+}
+
+templ Header() {
+	<header class="bg-white w-full px-28 fixed">
+		<div class="p-4 grid grid-cols-2">
+			<div class="">
+				<img src="../static/content/Logo-min.png" class="w-[4rem]"/>
+			</div>
+			<div class="flex justify-between items-end font-general text-[#104C84] font-semibold text-base">
+				<span>INÍCIO</span>
+				<span>EMPRESA</span>
+				<span>SERVIÇOS</span>
+				<span>CONTATO</span>
+			</div>
+		</div>
+	</header>
+}
+
+templ Footer() {
+	<footer></footer>
+}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'general-sans';
+    src: url(../content/GeneralSans-Variable.ttf);
+}
+
+html,
+body,
+span {
+    padding: 0;
+    margin: 0;
+}
+
+.font-general {
+    font-family: 'general-sans';
+}
+
+.custom-shadow-box {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
